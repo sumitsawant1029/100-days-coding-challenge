@@ -2,6 +2,12 @@
 
 #include<stdio.h>
 
+void add(int a, int b){
+    printf("The Sum Of %d & %d is ",a,b);
+    printf(a+b);
+}
+
+
 int main(){
     int a,b,c;
     printf("****************Operation******************");
