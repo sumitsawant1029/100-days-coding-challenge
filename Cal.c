@@ -3,39 +3,46 @@
 #include<stdio.h>
 
 // Funtion to Add Operants
-void add(int a, int b){
+void add(int a, int b)
+{
     printf("The Sum Of %d & %d is ",a,b);
     printf(a+b);
 }
+
 // Funtion To Subtract Operands
-void sub(int a, int b){
-    if(a>b){
+void sub(int a, int b)
+{
+    if(a>b)
+    {
         printf("Difference Between Two Numbers %d & %d is",a,b);
         printf(a-b);
     }
-    else{
+    else
+    {
         printf("Difference Between Two Numbers %d & %d is",b,a);
         printf(b-a);
     }
 }
 // Funtion To Multiply Two Numbers
-void mul(int a, int b){
+void mul(int a, int b)
+{
     printf("The Product Of %d & %d is",a,b);
     printf(a*b);
 }
 
-void div(int a , int b){
-    if(a> b){
-    printf("The Division Of %d & %d is ",a,b);
-    printf(a/b);
+// Funtion To Divide two Numbers
+void div(int a , int b)
+{
+    if(a> b)
+    {
+        printf("The Division Of %d & %d is ",a,b);
+        printf(a/b);
     }
-    else {
+    else 
+    {
         printf("The Division Of %d & %d is ",b,a);
-    printf(b/a);
+        printf(b/a);
     }
-
-
-
 }
 
 
