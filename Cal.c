@@ -18,12 +18,25 @@ void sub(int a, int b){
         printf(b-a);
     }
 }
-
+// Funtion To Multiply Two Numbers
 void mul(int a, int b){
     printf("The Product Of %d & %d is",a,b);
     printf(a*b);
 }
 
+void div(int a , int b){
+    if(a> b){
+    printf("The Division Of %d & %d is ",a,b);
+    printf(a/b);
+    }
+    else {
+        printf("The Division Of %d & %d is ",b,a);
+    printf(b/a);
+    }
+
+
+
+}
 
 
 
