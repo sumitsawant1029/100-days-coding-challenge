@@ -2,10 +2,12 @@
 
 #include<stdio.h>
 
+// Funtion to Add Operants
 void add(int a, int b){
     printf("The Sum Of %d & %d is ",a,b);
     printf(a+b);
 }
+// Funtion To Subtract Operands
 void sub(int a, int b){
     if(a>b){
         printf("Difference Between Two Numbers %d & %d is",a,b);
@@ -16,6 +18,8 @@ void sub(int a, int b){
         printf(b-a);
     }
 }
+
+
 
 
 int main(){
