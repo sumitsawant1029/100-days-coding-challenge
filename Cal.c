@@ -6,6 +6,16 @@ void add(int a, int b){
     printf("The Sum Of %d & %d is ",a,b);
     printf(a+b);
 }
+void sub(int a, int b){
+    if(a>b){
+        printf("Difference Between Two Numbers %d & %d is",a,b);
+        printf(a-b);
+    }
+    else{
+        printf("Difference Between Two Numbers %d & %d is",b,a);
+        printf(b-a);
+    }
+}
 
 
 int main(){
