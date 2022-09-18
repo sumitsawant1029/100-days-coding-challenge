@@ -4,44 +4,47 @@
 
 // Funtion to Add Operants
 void add(int a, int b)
-{
-    printf("The Sum Of %d & %d is ",a,b);
-    printf(a+b);
+{	
+    printf("The Sum Of %d & %d is %d ",a,b,a+b);
 }
 
 // Funtion To Subtract Operands
 void sub(int a, int b)
-{
+{	
+	int c;
     if(a>b)
     {
-        printf("Difference Between Two Numbers %d & %d is",a,b);
-        printf(a-b);
+    	c=a-b;
+        printf("Difference Between Two Numbers %d & %d is %d ",a,b,c);
+        
     }
     else
-    {
-        printf("Difference Between Two Numbers %d & %d is",b,a);
-        printf(b-a);
+    { 
+    	c=b-a;
+        printf("Difference Between Two Numbers %d & %d is %d",b,a,c);
     }
 }
 // Funtion To Multiply Two Numbers
 void mul(int a, int b)
 {
-    printf("The Product Of %d & %d is",a,b);
-    printf(a*b);
+	int c;
+	c=a*b;
+    printf("The Product Of %d & %d is %d",a,b,c);
 }
 
 // Funtion To Divide two Numbers
 void div(int a , int b)
-{
+{	
+	int c;
     if(a> b)
-    {
-        printf("The Division Of %d & %d is ",a,b);
-        printf(a/b);
+    {	
+    	c=a/b;
+        printf("The Division Of %d & %d is %d ",a,b,c);
     }
     else 
     {
-        printf("The Division Of %d & %d is ",b,a);
-        printf(b/a);
+    	c=b/a;
+        printf("The Division Of %d & %d is %d",b,a,c);
     }
 }
 
@@ -49,27 +52,25 @@ void div(int a , int b)
 
 
 int main(){
-    int a,b;
-    char c;
-    printf("****************Operation******************");
+    int a,b,c;
+    
+    printf("****************Operation******************\n");
     printf("Enter two Operands: ");
     scanf("%d %d",&a,&b);
-    printf("/n");
-    printf("Enter The Operant (*,/,+,-,%):");
-    scanf("%c",&c);
-
+    printf("1)*\n2)/\n3)+\n4)-\n 5) Enter Your Choice:");
+    scanf("%d",&c);
+    
     switch (c)
     {
-    case '*': mul(a,b);
+    case 1: mul(a,b);
               break;
-    case '/': div(a,b);
+    case 2: div(a,b);
               break;
-    case '-': sub(a,b);
+    case 4: sub(a,b);
               break;
-    case '+': add(a,b);
+    case 3: add(a,b);
               break;
     default:  printf("You Entered A Wrong Choice");
-        break;
     }
 
 }
