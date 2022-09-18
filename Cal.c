@@ -19,6 +19,12 @@ void sub(int a, int b){
     }
 }
 
+void mul(int a, int b){
+    printf("The Product Of %d & %d is",a,b);
+    printf(a*b);
+}
+
+
 
 
 
