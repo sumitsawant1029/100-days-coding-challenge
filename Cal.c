@@ -49,7 +49,8 @@ void div(int a , int b)
 
 
 int main(){
-    int a,b,c;
+    int a,b;
+    char c;
     printf("****************Operation******************");
     printf("Enter two Operands: ");
     scanf("%d %d",&a,&b);
@@ -57,7 +58,7 @@ int main(){
     printf("Enter The Operant (*,/,+,-,%):");
     scanf("%c",&c);
 
-    switch ()
+    switch (c)
     {
     case '*': mul(a,b);
               break;
