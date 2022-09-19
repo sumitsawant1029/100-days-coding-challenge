@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 // Funtion to Add Operants
-void add(int a, int b)
+void add(int a, int b)// Passing The Operands
 {	
     printf("The Sum Of %d & %d is %d ",a,b,a+b);
 }
