@@ -1,7 +1,8 @@
 // Program To Calculate Easy Operations using C
 
 #include<stdio.h>
-
+//void add():- To Add Two Numbers
+//void Sub():- To Substract Two Numbers
 // Funtion to Add Operants
 void add(int a, int b)// Passing The Operands
 {	
