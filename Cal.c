@@ -3,6 +3,8 @@
 #include<stdio.h>
 //void add():- To Add Two Numbers
 //void Sub():- To Substract Two Numbers
+// void div():- To Divide Two Numbers 
+// void Product():- To Multiply Two Numbers
 // Funtion to Add Operants
 void add(int a, int b)// Passing The Operands
 {	
