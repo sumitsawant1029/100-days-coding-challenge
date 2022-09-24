@@ -20,6 +20,28 @@ void dis(struct node * head){
 	}
 	
 }
+
+void InsertE(struct node* head,int data){
+    if(head==NULL){
+        head=InsertB(head,data);
+    }
+    else
+    {
+        
+        struct node * temp,*ptr;
+        temp= (struct node *)malloc(sizeof(struct node));
+        while(ptr!=NULL){
+            ptr=ptr->next;
+        }
+        temp->data=data;
+        temp->next=NULL;
+        temp->prev=NULL;
+
+        ptr->next=temp;
+    }
+
+
+}
 struct node * InsertB(struct node *head,int data){
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
 		if(head==NULL){
@@ -67,7 +89,10 @@ int main(){
                     head=InsertB(head,n);
                     dis(head);
                     break;    
-		   
+		   case 2: printf("Enter The Element:");
+                    scanf("%d",&n);
+                    InsertE(head,n);
+                    break;
 					}
     }
 }
