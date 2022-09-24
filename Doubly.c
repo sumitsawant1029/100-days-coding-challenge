@@ -1,7 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+// Creating An Structure
+struct node{
+    int data;
+    struct node * prev;
+    struct node * next;
+};
+
+struct node *head;
+void InsertB(){
+
+
+}
+
 int main(){
-    int e=0,ch;
+    int e=0,ch,n;
+    head=NULL;
     while(e!=1){
         printf("******************Doubly LinkList*******************");
         printf("1) Insert From Beginning\n");
@@ -14,23 +29,15 @@ int main(){
         scanf("%d",&ch);
 
         switch(ch){
-            case 1: 
+            case 1: printf("Enter The Element :");
+                    scanf("%d",&n);
+                    InsertB(head,n);
+
 
 
 
 
 
         }
-        
-
-
-
-
-
     }
-
-
-
-
-
 }
