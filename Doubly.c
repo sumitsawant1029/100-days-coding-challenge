@@ -68,11 +68,38 @@ struct node * InsertE(struct node* head,int data){
 	return head;
 }
 
-
+struct node * InsertP(struct node *head,int data,int posi){
+		struct node * temp,*ptr;
+        temp= (struct node *)malloc(sizeof(struct node));
+	if(head==NULL && posi != 1){
+	     printf("The List Is Too Short !!\n");	
+	}
+	else if(posi==1){
+		head = InsertB(head,data);
+	}
+	else{
+	
+		int i=1;
+		temp->data=data;
+        temp->next=NULL;
+        temp->prev=NULL;
+        ptr=head;
+        posi--;
+        while(i!=posi){
+            ptr=ptr->next;
+          	i=i+1;  
+        }
+        
+        temp->next=ptr->next;
+        temp->prev=ptr;
+        ptr->next=temp;
+        dis(head);
+	}	
+}
 
 
 int main(){
-    int e=0,ch,n;
+    int e=0,ch,n,posi;
     head=NULL;
     while(e!=1){
         printf("\n******************Doubly LinkList*******************\n");
@@ -95,6 +122,11 @@ int main(){
                     scanf("%d",&n);
                     head=InsertE(head,n);
                     break;
+            case 3: printf("Enter the Element:");
+            		scanf("%d",&n);
+            		printf("Enter The Position:");
+            		scanf("%d",&posi);
+            		head=InsertP(head,n,posi);
 					}
     }
 }
