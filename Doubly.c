@@ -11,14 +11,18 @@ struct node{
 struct node *head;
 
 void dis(struct node * head){
-	struct node * ptr;
-	ptr=head;
-	printf("The List is :\n");
-	while(ptr!=NULL){
-		printf("%d\n",ptr->data);
-		ptr=ptr->next;
+	if(head==NULL){
+		printf("List Is Empty\n");
 	}
-	
+	else{
+		struct node * ptr;
+		ptr=head;
+		printf("The List is :\n");
+		while(ptr!=NULL){
+			printf("%d\n",ptr->data);
+			ptr=ptr->next;
+		}
+	}
 }
 struct node * InsertB(struct node *head,int data){
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
@@ -93,11 +97,68 @@ struct node * InsertP(struct node *head,int data,int posi){
         temp->next=ptr->next;
         temp->prev=ptr;
         ptr->next=temp;
-        dis(head);
+       
 	}	
+	dis(head);
+	return head;
 }
 
+struct node * DeleteB(struct node *head){
+	if(head==NULL){
+		head=NULL;
+	}
+	else{
+	head=head->next;	
+	}
+	return head;
+}
 
+struct node * DeleteE(struct node * head)
+{
+	if(head->next==NULL){
+		head=NULL;
+	}
+	else{
+	
+	struct node *ptr;
+	ptr=head;
+	while(ptr->next->next!=NULL){
+		ptr=ptr->next;
+	}
+	ptr->next=NULL;
+	}
+	return head;
+}
+
+/*struct node * DeleteP(struct node * head){
+	
+	struct node *ptr,*ptr1;
+	if(head==NULL && posi != 1){
+	     printf("The List Is Too Short !!\n");	
+	}
+	else if(posi==1){
+		head = DeleteB(head);
+	}
+	else{
+	
+		int i=1;
+        ptr=head;
+        posi--;
+        while(i!=posi){
+            ptr=ptr->next;
+          	i=i+1;  
+        }
+       ptr->next=ptr->next->next;
+       ptr1=ptr->next;
+       
+	}	
+	dis(head);
+	return head;
+	
+	
+	
+	
+}*/
 int main(){
     int e=0,ch,n,posi;
     head=NULL;
@@ -115,18 +176,33 @@ int main(){
         switch(ch){
             case 1: printf("Enter The Element :");
                     scanf("%d",&n);
+                    
                     head=InsertB(head,n);
                     dis(head);
                     break;    
 		   case 2: printf("Enter The Element:");
                     scanf("%d",&n);
+                    
                     head=InsertE(head,n);
                     break;
             case 3: printf("Enter the Element:");
             		scanf("%d",&n);
             		printf("Enter The Position:");
             		scanf("%d",&posi);
-            		head=InsertP(head,n,posi);
+            		
+					head=InsertP(head,n,posi);
+					break;
+			case 4: head=DeleteB(head);
+					dis(head);
+					break;
+			case 5: head=DeleteE(head);
+					dis(head);
+					break;
+			case 6: head=DeleteP(head);
+					dis(head);
+					break;
+            default : 
+					printf("You Entered A Wrong Choice");
 					}
     }
 }
