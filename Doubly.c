@@ -9,16 +9,49 @@ struct node{
 };
 
 struct node *head;
-void InsertB(){
 
-
+void dis(struct node * head){
+	struct node * ptr;
+	ptr=head;
+	printf("The List is :\n");
+	while(ptr!=NULL){
+		printf("%d\n",ptr->data);
+		ptr=ptr->next;
+	}
+	
 }
+struct node * InsertB(struct node *head,int data){
+	struct node *temp = (struct node *)malloc(sizeof(struct node));
+		if(head==NULL){
+		
+		temp->data=data;
+		temp->next=NULL;
+		temp->prev=NULL;
+			
+		temp->next=head;
+		head=temp;
+	}
+	else{
+		
+		temp->data=data;
+		temp->next=NULL;
+		temp->prev=NULL;	
+		
+		temp->next=head;
+		head->prev=temp;
+		head=temp;
+	}
+
+	return head;
+}
+
+
 
 int main(){
     int e=0,ch,n;
     head=NULL;
     while(e!=1){
-        printf("******************Doubly LinkList*******************");
+        printf("\n******************Doubly LinkList*******************\n");
         printf("1) Insert From Beginning\n");
         printf("2) Insert From End\n");
         printf("3) Insert At Position\n");
@@ -31,13 +64,10 @@ int main(){
         switch(ch){
             case 1: printf("Enter The Element :");
                     scanf("%d",&n);
-                    InsertB(head,n);
-
-
-
-
-
-
-        }
+                    head=InsertB(head,n);
+                    dis(head);
+                    break;    
+		   
+					}
     }
 }
