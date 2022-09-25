@@ -1,5 +1,7 @@
+// Stack Using Link List
+
 //Name :- Sumit Sawant
-// Queue Using Link List
+
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -12,7 +14,7 @@ struct node *head;
 
 void Display(struct node *head){
 	if(head==NULL){
-		printf("Queue Is Empty!!!!!\n");
+		printf("Stack Is Empty!!!!!\n");
 	
 	}
 	else{
@@ -25,7 +27,7 @@ void Display(struct node *head){
 		}
 	}
 }
-struct node * Enqueue(struct node * head,int data){
+struct node * Push(struct node * head,int data){
 	struct node *temp=(struct node *)malloc(sizeof(struct node));	
 	if(head==NULL){
 		temp->data=data;
@@ -46,26 +48,16 @@ struct node * Enqueue(struct node * head,int data){
 	return head;
 }
 
-void Dequeue(struct node * head){
+struct node * Pop(struct node * head){
 	if(head==NULL){
-		printf("Queue is Empty\n");
+		printf("Stack is Empty\n");
 	}
-	else if(head->next==NULL){
-		printf("The Element You Deleted Is %d\n",head->data);
-		head=NULL;
-	}	
-	else{
-	     struct node *ptr;
-	     ptr=head;
-	     while(ptr->next->next!=NULL){
-
-			 ptr=ptr->next;
-	
-		 }
-		 printf("The Element You Deleted Is %d\n",ptr->next->data);
-		 ptr->next=NULL;
+	else
+	{
+		printf("The Element you Deleted is %d\n",head->data);
+		head=head->next;
 	}
-	
+	return head;
 }
 
 void Search(struct node * head,int x){
@@ -99,9 +91,9 @@ int main(){
     int ch,c=0,x;
     head=NULL;
     while(c!=1){
-    	printf("**********************Queue Using LinkList********************************\n");
-        printf("1) Enqueue\n");
-        printf("2) Dequeue\n");
+    	printf("**********************Stack Using LinkList********************************\n");
+        printf("1) Push\n");
+        printf("2) Pop\n");
         printf("3) Search\n");
         printf("4) Display\n");
         printf("5) Exit\n");
@@ -111,9 +103,9 @@ int main(){
         {
         case 1:printf("Enter The Number:");
         	   scanf("%d",&x);	
-				 head=Enqueue(head,x);
+				 head=Push(head,x);
             break;
-        case 2:Dequeue(head);
+        case 2: head=Pop(head);
             break;
         case 3:
         		printf("Enter the Number Yo Want To Search:");
@@ -122,8 +114,9 @@ int main(){
             break;
         case 4:Display(head);
             break;
-        case 5:c=1;
-        	break;
+        case 5:printf("Thanks For Using Our Service!!!\n");
+				c=1;
+        		break;
         default: printf("You Entered A Wrong Choice!!!!!\n");
             break;//
         }
