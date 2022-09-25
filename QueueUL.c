@@ -8,7 +8,7 @@ struct node{
     int data;
     struct node * next;
 };
-struct node *head=NULL;
+struct node *head;
 
 void Display(struct node *head){
 	if(head==NULL){
@@ -46,7 +46,7 @@ struct node * Enqueue(struct node * head,int data){
 	return head;
 }
 
-struct node *Dequeue(struct node * head){
+void Dequeue(struct node * head){
 	if(head==NULL){
 		printf("Queue is Empty\n");
 	}
@@ -58,11 +58,14 @@ struct node *Dequeue(struct node * head){
 	     struct node *ptr;
 	     ptr=head;
 	     while(ptr->next->next!=NULL){
-	     	ptr=ptr->next;
+
+			 ptr=ptr->next;
+	
 		 }
-		 printf("The Element You Deleted Is %d\n",ptr->data);
+		 printf("The Element You Deleted Is %d\n",ptr->next->data);
 		 ptr->next=NULL;
 	}
+	
 }
 
 void Search(struct node * head,int x){
@@ -94,6 +97,7 @@ void Search(struct node * head,int x){
 
 int main(){
     int ch,c=0,x;
+    head=NULL;
     while(c!=1){
     	printf("**********************Queue Using LinkList********************************\n");
         printf("1) Enqueue\n");
@@ -109,7 +113,7 @@ int main(){
         	   scanf("%d",&x);	
 				 head=Enqueue(head,x);
             break;
-        case 2:head=Dequeue(head);
+        case 2:Dequeue(head);
             break;
         case 3:
         		printf("Enter the Number Yo Want To Search:");
