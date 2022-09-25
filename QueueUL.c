@@ -1,9 +1,45 @@
+//Name :- Sumit Sawant
+// Queue Using Link List
+
 #include<stdio.h>
 struct node{
     int data;
     struct node * next;
 };
 struct node *head;
+
+void Enqueue(struct node * head){
+	
+	
+	
+	
+	
+}
+
+void Dequeue(struct node * head){
+	
+	
+	
+	
+	
+}
+
+void Search(struct node * head){
+	
+	
+	
+	
+}
+
+void Display(struct node * head){
+	
+	
+	
+	
+	
+	
+	
+}
 int main(){
     int ch,c=0;
     head=NULL;
@@ -28,12 +64,5 @@ int main(){
         default: printf("You Entered A Wrong Choice!!!!!\n")
             break;
         }
-
-
-
     }
-
-
-
-
 }
