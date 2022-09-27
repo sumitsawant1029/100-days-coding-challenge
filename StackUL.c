@@ -32,6 +32,7 @@ void Display(struct node *head){
 
 // Insert An Element From Top
 struct node * Push(struct node * head,int data){
+	// Creating  A Temporary Node 
 	struct node *temp=(struct node *)malloc(sizeof(struct node));	
 	if(head==NULL){
 		temp->data=data;
