@@ -53,8 +53,11 @@ struct node * Push(struct node * head,int data){
 	return head;
 }
 
+
+// Deleting The Element From Top
 struct node * Pop(struct node * head){
 	if(head==NULL){
+		// Initial Condition
 		printf("Stack is Empty\n");
 	}
 	else
