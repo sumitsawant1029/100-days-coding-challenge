@@ -12,6 +12,7 @@ struct node{  // Created A Node
 };
 struct node *head;
 
+// Display The Stack
 void Display(struct node *head){
 	if(head==NULL){
 		printf("Stack Is Empty!!!!!\n");
@@ -20,13 +21,16 @@ void Display(struct node *head){
 	else{
 		struct node * ptr=NULL;
 		ptr=head;
-		printf("List Is :\n");
+		printf("Stack Is :\n");
+		// Traversing
 		while(ptr!=NULL){
 			printf("%d\n",ptr->data);
 			ptr=ptr->next;
 		}
 	}
 }
+
+// Insert An Element From Top
 struct node * Push(struct node * head,int data){
 	struct node *temp=(struct node *)malloc(sizeof(struct node));	
 	if(head==NULL){
