@@ -68,6 +68,7 @@ struct node * Pop(struct node * head){
 	return head;
 }
 
+// Searching An Element In The Stack
 void Search(struct node * head,int x){
 	
 	if(head==NULL){
@@ -86,14 +87,10 @@ void Search(struct node * head,int x){
 			}
 			printf("\n");
 			ptr=ptr->next;
-		}
-		
-		
+		}	
 	}
-	
-	
-	
 }
+
 
 int main(){
     int ch,c=0,x;
